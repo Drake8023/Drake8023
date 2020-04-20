@@ -1,0 +1,34 @@
+#include<stdio.h>
+#include<math.h>
+void pf(int n);
+void pf(int n)
+{
+	int p,c,a,g,s,b;
+	double pfg;
+	p = n;
+
+	if (n >= 100)
+	{
+		g = p % 10;
+		s = p / 10 % 10;
+		b = p / 100;
+		pfg = sqrt(p);
+		c = (int)pfg;
+		if ((pfg-c==0) && ((g == s) || (g == b) || (s == b) == 1))
+		{
+			printf("%d\n", p);
+			
+		}
+		pf(n -1);
+	}
+	else
+	{
+		return;
+	}
+}
+void main()
+{
+	int i=999;
+	printf("三位数是完全平方数且有两位相同的数有：\n");
+	 pf(i);
+}
