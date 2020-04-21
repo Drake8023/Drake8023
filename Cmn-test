@@ -1,0 +1,26 @@
+#include<stdio.h>
+#define S 200
+int pl(int m, int n);
+int main()
+{
+	int m, n;
+	printf("Please enter the m and n:");
+	//scanf_s("%d,%d", &m,&n);
+	scanf_s("%d", &m);
+	scanf_s("%d", &n);
+	if (m < n)
+		printf("erro");
+	else
+	pl(m, n);
+	return 0;
+}
+int pl(int m, int n)
+{
+	int i, j,a[S];
+	a[0] = 1;
+	for (i = 0; i <= m; i++)
+		for (a[i] = 1, j = i - 1; j >= 1; j--)
+			a[j] = a[j] + a[j - 1];
+	printf("%d", a[n]);
+	return 0;
+}
