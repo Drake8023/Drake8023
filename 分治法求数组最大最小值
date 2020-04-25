@@ -1,0 +1,93 @@
+#include<stdio.h>
+void maxmin(int* a, int m, int n, int* min1, int* min2, int* max1, int* max2);
+
+void main()
+{
+    int a[14] = { 45,5,12,56,6,2,48,6,41,65,4,15,8,35};
+    int min1, min2;
+    int max1, max2;
+    maxmin(a, 0, 13, &min1, &min2, &max1, &max2);
+    printf("min1=%d min2=%d\nmax1=%d max2=%d\n", min1, min2, max1, max2);
+}
+
+void maxmin(int* a, int m, int n, int* min1, int* min2, int* max1, int* max2)
+{
+    int lmin1, lmin2, lmax1, lmax2;
+    int rmin1, rmin2, rmax1, rmax2;
+    int mid;
+    if (m == n)
+    {
+        *min1 =* min2 = *max1 = *max2=a[m];
+    }
+    else
+    {
+        if (m == n - 1)
+        {
+            if (a[m] < a[n])
+            {
+                *min1 = *max2 = a[m];
+                *min2 = *max1 = a[n];
+            }
+            else
+            {
+                *min1 = *max2 = a[n];
+                *min2 = *max1 = a[m];
+            }
+        }
+        else
+        {
+            mid = (m + n) / 2;
+            maxmin(a, m, mid, &lmin1, &lmin2, &lmax1, &lmax2);
+            maxmin(a, mid + 1, n, &rmin1, &rmin2, &rmax1, &rmax2);//lmin1<lmin2,lmax2<lmax1 r同理
+            if (lmin1 < rmin1)//左最小小于右最小
+            {
+                if (lmin2 < rmin1)
+                {
+                    *min1 = lmin1;
+                    *min2 = lmin2;
+                }
+                else
+                    {
+                    *min1 = lmin1;
+                    *min2 = rmin1;
+                    }
+            }
+            else//右最小小于左最小
+                if (rmin2 < lmin1)
+                {
+                    *min1 = rmin1;
+                    *min2 = rmin2;
+                }
+                else
+                {
+                    *min1 = rmin1;
+                    *min2 = lmin1;
+                }
+            if (lmax1> rmax1)//左最大大于右最大
+            {
+                if (lmax2 > rmax1)
+                {
+                    *max1 = lmax1;
+                    *max2 = lmax2;
+                }
+                else
+                {
+                    *max1 = lmax1;
+                    *max2 = rmax1;
+                }
+            }
+            else//右最大大于左最大
+                if (rmax2 > lmax1)
+                    {
+                        *max1 = rmax1;
+                        *max2 = rmax2;
+                    }
+                    else
+                    {
+                        *max1 = rmax1;
+                        *max2 = lmax1;
+                    }
+            
+        }
+    }
+}
