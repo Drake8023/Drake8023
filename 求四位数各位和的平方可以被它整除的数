@@ -1,0 +1,16 @@
+#include<stdio.h>
+void main()
+{
+	int n, g, s, b, q,k=0;
+	for (n = 1023; n < 9878; n++)
+	{
+		g = n % 10;
+		s = (n % 100 - g) / 10;
+		b = n / 100 - (n / 1000 * 10);
+		q = n / 1000;
+		if (g != s &&s!= b&&s!=q&&b != q&&g!=b&&g!=q)
+			k = (g + s + b + q) * (g + s + b + q);
+		if (n % k == 0)
+			printf("%d\n", n);
+	}
+}
