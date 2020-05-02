@@ -1,0 +1,27 @@
+#include<stdio.h>
+void main(){
+	 int n,a,b,c;
+	 printf("输入一个数：\n");
+	 scanf("%d",&n);
+	 a=n%4;
+	 b=n%7;
+	 c=n%9;
+	if(a==0&&b==0&&c==0)
+		 printf("能同时被4，7，9整除\n");
+	 else if(a==0&&b!=0&&c!=0)
+		  printf("能被4整除\n");
+	 else if(a!=0&&b==0&&c!=0)
+		 printf("能被7整除\n");
+	 else if(a!=0&&b!=0&&c==0)
+		 printf("能被9整除\n");
+	 	 else if(a!=0&&b==0&&c==0)
+		 printf("能被7,9整除\n");
+		 	 else if(a==0&&b==0&&c!=0)
+		 printf("能被4,7整除\n");
+			 	 else if(a==0&&b!=0&&c==0)
+		 printf("能被4,9整除\n");
+	 else if(a!=0&&b!=0&&c!=0)
+		 printf("不能被上述任一个整除\n");
+
+
+}
