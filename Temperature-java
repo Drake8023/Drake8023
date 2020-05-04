@@ -1,0 +1,15 @@
+package application_1;
+
+import java.util.Scanner;
+public class Application_1 {
+
+    public static void main(String[] args) {
+        Scanner input  = new Scanner(System.in);
+        System.out.println("Enter a celisus:");
+        double c=input.nextDouble();
+        double f;
+        f=  (9.0/5)*c+32;
+        System.out.println("The Fahrenheit is"+f);
+    }
+    
+}
