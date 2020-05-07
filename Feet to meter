@@ -1,0 +1,16 @@
+package application_3;
+
+import java.util.Scanner;
+public class Application_3 {
+
+    
+    public static void main(String[] args) {
+        Scanner input  = new Scanner(System.in);
+        System.out.println("Enter a feet");
+        double f=input.nextDouble();
+        double m;
+m=f*0.305;
+        System.out.println("meter"+m);
+    }
+    
+}
