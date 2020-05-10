@@ -1,0 +1,19 @@
+
+package Subtractionquiz;
+
+import java.util.Scanner;
+public class Subtractionquiz {
+    public static void main(String[] args) {
+        int num1=(int)(System.math.random()*100);
+        int num2=(int)( System.math.random()*100);
+        Scanner input =new Scanner(System.in);
+        System.out.println("what is"+num1+"-"+num2+"?");
+        int ans=input.nextInt();
+        System.out.println(num1+"-"+num2+"="+ans+"is"+(num1-num2==ans));
+        if(num1-num2==ans)
+             System.out.println("good");
+        else
+             System.out.println(num1+"-"+num2+"="+ans+"is"+(num1-num2));
+    }
+    
+}
