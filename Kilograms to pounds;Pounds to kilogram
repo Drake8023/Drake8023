@@ -1,0 +1,21 @@
+package javahomework;
+
+public class pounds {
+     public static void main(String[] args)
+    {
+            
+            int kilograms=1;
+            int pounds=20;
+            System.out.println("Kilograms      Pounds       |       Pounds        Kilograms");
+           for(int k=0;k<100;k++)
+           {
+               double kg=kilograms*2.2;
+               double p=pounds/2.2;
+              kg=(double)Math.round(kg*100)/100;
+              p=(double)Math.round(p*100)/100;
+               System.out.println(kilograms+"             "+kg+"          |       "+pounds+"          "+p);
+               kilograms=kilograms+2;
+               pounds=pounds+5;
+           }
+    }
+}
