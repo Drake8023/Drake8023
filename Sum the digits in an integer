@@ -1,0 +1,26 @@
+package javahomework;
+
+import java.util.Scanner;
+public class sumDigits {
+    public static void main(String[] args)
+    {
+        System.out.println("please input a number:");
+       Scanner input =new Scanner(System.in); 
+        int num=input.nextInt();
+        sumDigits(num,0);
+    }
+    public static int sumDigits(int n,int t)
+    {
+        int l;
+        l=n%10;
+        t=t+l;
+        n=n/10;
+        if(n!=0)
+            sumDigits(n,t);
+        else
+        {
+            System.out.println(t);
+        }
+        return 0;
+    }
+}
