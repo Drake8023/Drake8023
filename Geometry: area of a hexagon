@@ -1,0 +1,17 @@
+package javahomework;
+
+import java.util.Scanner;
+public class hexagon {
+    public static void main(String[] args)
+    {
+        Scanner input=new Scanner(System.in);
+        double Area=0;
+        System.out.println("in put the side:");
+        double s=input.nextDouble();
+        Area=(6*s*s)/(4*Math.tan(Math.PI/6));
+        Area=(double)Math.round(Area*100)/100;
+        System.out.println("The area of hexagon is "+Area);
+        
+    }
+    
+}
