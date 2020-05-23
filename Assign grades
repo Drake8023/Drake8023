@@ -1,0 +1,47 @@
+
+package javahomework;
+
+/**
+ *
+ * @author Administrator
+ */
+import java.util.Scanner;
+public class assainscore2 {
+     public static int best(int a[])
+    {
+        int b;
+        b=a[0];
+        for(int j=0;j<a.length;j++)
+        {
+        if (b<a[j])
+            b=a[j];
+        }
+        return b;
+    }
+    public static void main(String[] args)
+    {
+        System.out.println("Enter the number of student:");
+        Scanner input=new Scanner(System.in);
+        int n=input.nextInt();
+         int score[]=new int[n];
+        System.out.println("Enter the scores:");
+        for(int i=0;i<score.length;i++)
+        {
+            score[i]=input.nextInt();
+        }
+      int best= best(score);
+      for(int k=0;k<score.length;k++)
+      {
+            if(score[k]>=best-10)
+              System.out.println("Student "+k+"score is "+score[k]+"and grade is A.");
+            if((score[k]>=best-20)&(score[k]<best-10))
+              System.out.println("Student "+k+"score is "+score[k]+"and grade is B.");
+            if((score[k]>=best-30)&(score[k]<best-20))
+              System.out.println("Student "+k+"score is "+score[k]+"and grade is C.");
+            if((score[k]>=best-40)&(score[k]<best-30))
+              System.out.println("Student "+k+"score is "+score[k]+"and grade is D.");
+            if((score[k]>=0)&(score[k]<best-40))
+              System.out.println("Student "+k+"score is "+score[k]+"and grade is F.");
+      }
+    
+    }
