@@ -1,0 +1,49 @@
+package javahomework;
+
+/**
+ *
+ * @author Administrator
+ */
+import java.util.Scanner;
+public class Averagearray {
+    public static int average(int[] array)
+    {
+        int add=0;
+        for(int i=0;i<array.length;i++)
+        {
+          add=add+array[i];
+        }
+        int ae=add/10;
+        return ae;
+    }
+    public static double average(double[] array)
+    {
+    double add=0;
+    for(int j=0;j<array.length;j++)
+    {
+        add=add+array[j];
+    }
+    double ae2=add/10;
+    return ae2;
+    }
+    public static void main(String[] args)
+    {
+        System.out.println("Enter ten double values:");
+            Scanner in = new Scanner(System.in);
+            double num[] = new double[10];
+            for(int i=0;i<num.length;i++)
+            {
+                num[i]=in.nextDouble();
+            }
+           System.out.println("Ten double values average is:"+(average(num)));
+           
+           System.out.println("Enter ten int values:");           
+            int num1[] = new int[10];
+            for(int i=0;i<num1.length;i++)
+            {
+                num1[i]=in.nextInt();
+            }
+           System.out.println("Ten int values average is:"+(average(num1)));
+    }
+    
+}
