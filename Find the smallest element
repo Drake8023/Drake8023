@@ -1,0 +1,32 @@
+package javahomework;
+
+/**
+ *
+ * @author Administrator
+ */
+import java.util.Scanner;
+public class SmallestElement {
+    public static double min(double array[])
+    {
+       double m;
+        m=array[0];
+        for(int j=0;j<array.length;j++)
+        {
+        if (m>array[j])
+            m=array[j];  
+    }
+        return m;
+    }
+    public static void main(String[] args)
+    {
+        Scanner input=new Scanner(System.in);
+        System.out.println("Enter ten double values:");
+        double array[]=new double [10];
+        for(int i=0;i<array.length;i++)
+        {
+            array[i]=input.nextDouble();
+        }
+        System.out.println("The smallest element is:"+(min(array)));
+    }
+    
+}
