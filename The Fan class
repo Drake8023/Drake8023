@@ -1,0 +1,68 @@
+package javahomework;
+
+public class fan {
+    	interface SpeedConstant{
+		int SLOW=1;
+		int MEDIUM=2;
+		int FAST=3;
+	}
+	private int speed=1;
+	private boolean on=false;
+	private double radius=5.0;
+	private String color="blue";
+	public int getspeed(){
+		return speed;
+	}
+	public void setspeed(int speed){
+		this.speed=speed;
+	}
+	public boolean geton(){
+		return on;
+	}
+	public void seton(boolean on){
+		this.on=on;
+	}
+	public double getradius(){
+		return radius;
+	}
+	public void setradius(double radius){
+		this.radius=radius;
+	}
+	public String getcolor(){
+		return color;
+	}
+	public void setcolor(String color){
+		this.color=color;
+	}
+	
+	//一个默认风扇的无参构造方法
+	public fan(){
+	}
+	
+	//一个名为toString()的方法返回描述风扇的字符串。
+        @Override
+	public String toString(){
+		if(on){
+			return "speed : "+speed+" color : "+color+" radius : "+radius+" fan is on";
+		}else{
+			return "speed : "+speed+" color : "+color+" radius :"+radius+" fan is off";
+		}
+	}
+	
+	public static void main(String[] args){
+		//风扇1的情况定义（先要把风扇1的on改为true）且输出
+		fan fan1=new fan();
+		fan1.seton(true);
+		fan1.setspeed(3);
+		fan1.setradius(10);
+		fan1.setcolor("yellow");
+		System.out.println("fan1 : "+fan1.toString());
+		System.out.println();
+		//风扇2的定义（不用修改因为默认值为false）且输出
+		fan fan2=new fan();
+		fan2.setspeed(2);
+		fan2.setradius(5);
+		fan2.setcolor("bule");
+		System.out.println("fan2 : "+fan2.toString());
+	}
+}
