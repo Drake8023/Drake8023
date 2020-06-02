@@ -1,0 +1,126 @@
+package javahomework2;
+
+/**
+ *
+ * @author Administrator
+ */
+
+
+
+import java.util.*;
+//public class Inheritance {
+   
+//}
+
+public class Person {
+    String name;
+    String address;
+    String phone_number;
+    String email_address;
+
+    public Person() {
+
+    }
+    public Person(
+            String n, String a, String p, String e) {
+        name = n;
+        address = a;
+        phone_number = p;
+        email_address = e;
+    }
+
+    @Override
+    public String toString() {
+        return  name + " Person";
+    }
+}
+
+
+class Student0 extends Person{
+    final String status1 = "Freshman";
+    final String status2 = "Sophomore";
+    final String status3 = "Junior";
+    final String status4 = "Senior";
+    public Student0(String n, String a, String p, String e) {
+        super(n, a, p, e);
+    }
+
+    @Override
+    public String toString() {
+        return name + " Student";
+    }
+
+
+
+}
+
+class Employee0 extends Person {
+    String office;
+    double salary;
+    Date date_hired = new Date();
+    public Employee0(
+            String n, String a, String p, String e, String o, double s) {
+        super(n, a, p, e);
+        this.office = o;
+        this.salary = s;
+    }
+
+    @Override
+    public String toString() {
+        return name + " Employee";
+    }
+
+}
+
+class Faculty0 extends Employee0 {
+
+    double work_hour;
+    String rank;
+    public Faculty0(
+            String n, String a, String p, String e, String o, double s, double w, String r) {
+        super(n, a, p, e, o, s);
+        this.work_hour = w;
+        this.rank = r;
+    }
+
+    @Override
+    public String toString() {
+        return name + " Faculty";
+    }
+
+}
+class Staff0 extends Employee0 {
+    String title;
+
+    public Staff0(String n, String a, String p, String e, String o, double s, String t) {
+        super(n, a, p, e, o, s);
+        title = t;
+    }
+
+    @Override
+    public String toString() {
+        return name + " Staff";
+    }
+ public static void main(String[] args) {
+        Person p = new Person("张三", "北京", "98720349", "2292018@qq.com");
+        System.out.println(p.toString());
+
+        Student0 s = new Student0("李四", "上海", "15153894", "2121678@163.com");
+        System.out.println(s.toString());
+
+        Employee0 e = new Employee0(
+                "王五", "广州", "5467890", "78976@qq.com","room101", 399999);
+        System.out.println(e.toString());
+
+        Faculty0 f = new Faculty0(
+                "赵六", "深圳", "45678", "48500@qq.com",
+                "room201",1000000, 8, "leader");
+        System.out.println(f.toString());
+
+        Staff0 sta = new Staff0(
+                "钱七", "9990874", "467547489", "7489@qq.com",
+                "room001", 29000, "monitor");
+        System.out.println(sta.toString());
+
+    }
+}
