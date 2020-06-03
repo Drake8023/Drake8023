@@ -1,0 +1,33 @@
+package javahomework2;
+
+/**
+ *
+ * @author Administrator
+ */
+import java.util.InputMismatchException;
+
+import java.util.Scanner;
+public class MismatchException {
+  public static void main(String[] args) {
+	
+		Scanner input = new Scanner(System.in);
+
+		boolean isTrue = true;
+
+		while (isTrue) {
+
+			try {
+				System.out.println("请输入两个整数：");
+				int a = input.nextInt();
+				int b = input.nextInt();
+				System.out.println("a + b = " + (a + b)); 
+				isTrue = false; 
+			} catch (InputMismatchException e) {
+				System.out.println("输入的数字有误，请重新输入！");
+				input.nextLine();// 清空输入的数字
+			}
+		}
+    }
+    
+}
+
